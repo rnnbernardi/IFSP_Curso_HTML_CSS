@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venda de Ingressos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><i class="bi bi-ticket-perforated-fill me-2"></i>Ingressos</a>
+        </div>
+    </nav>
+
+    <div class="container mb-5">
+        <div class="row g-4">
+            
+            <div class="col-lg-4">
+                <div class="card p-4 shadow-sm">
+                    <h4 class="mb-4 text-secondary">Cadastro do Comprador</h4>
+                    
+                    <form>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-gradient form-control" id="nomeCompleto" placeholder="Nome Completo" required>
+                            <label for="nomeCompleto">Nome completo</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="email" placeholder="nome@exemplo.com" required>
+                            <label for="email">Endereço de email</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" required>
+                            <label for="cpf">CPF</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="date" class="form-control" id="dataNascimento" required>
+                            <label for="dataNascimento">Data de nascimento</label>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label text-muted small px-2">Envie sua foto aqui (para o crachá)</label>
+                            <input class="form-control" type="file" id="fotoComprador" required>
+                        </div>
+
+                        <div class="form-floating mb-4">
+                            <select class="form-select" id="setorShow" aria-label="Selecione o Setor" required>
+                                <option value="" selected disabled>Escolha o setor...</option>
+                                <option value="arquibancada">Arquibancada</option>
+                                <option value="pista">Pista</option>
+                                <option value="vip">VIP</option>
+                            </select>
+                            <label for="setorShow">Selecione o Setor</label>
+                        </div>
+
+                        <div class="card p-3 bg-light mb-4 border-secondary position-relative" id="brinde">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="m-0 text-dark fw-bold">BRINDE!</h5>
+                                <span class="badge text-bg-secondary">NOVO!</span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="exampleColorInput" class="form-label text-muted small mb-1">Escolha a cor de sua camisa</label>
+                                <input type="color" class="form-control form-control-color w-100-color" id="exampleColorInput" value="#3b2b5c" title="Escolha a cor da sua camisa">
+                            </div>
+
+                            <div class="mb-2">
+                                <label for="tamanhoCamiseta" class="form-label text-muted small">Tamanho</label>
+                                <select class="form-select" id="tamanhoCamiseta">
+                                    <option value="" selected disabled>Escolha o tamanho...</option>
+                                    <option value="P">P</option>
+                                    <option value="M">M</option>
+                                    <option value="G">G</option>
+                                    <option value="GG">GG</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-success btn-lg w-100 fw-bold py-3 text-uppercase">Comprar</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-8 d-flex flex-column justify-content-between">
+                
+                <div class="card shadow-sm p-4 mb-4 bg-white text-center flex-grow-1 d-flex align-items-center justify-content-center">
+                    <div id="carouselSetores" class="carousel carousel-dark slide w-100" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            
+                            <div class="carousel-item active">
+                                <div class="card card-custom border-primary text-center">
+                                    <div class="card-header bg-primary text-white py-3">
+                                        <h4 class="my-0 fw-normal">Arquibancada</h4>
+                                    </div>
+                                    <div class="card-body py-4">
+                                        <h1 class="card-title pricing-card-title">R$ 80,00</h1>
+                                        <ul class="list-unstyled mt-3 mb-4 text-muted">
+                                            <li><i class="bi bi-check2 me-2 text-success"></i>Assentos confortáveis</li>
+                                            <li><i class="bi bi-check2 me-2 text-success"></i>Visão panorâmica do palco</li>
+                                            <li><i class="bi bi-check2 me-2 text-success"></i>Acesso a praça de alimentação</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="card card-custom border-success text-center">
+                                    <div class="card-header bg-success text-white py-3">
+                                        <h4 class="my-0 fw-normal">Pista</h4>
+                                    </div>
+                                    <div class="card-body py-4">
+                                        <h1 class="card-title pricing-card-title">R$ 150,00</h1>
+                                        <ul class="list-unstyled mt-3 mb-4 text-muted">
+                                            <li><i class="bi bi-check2 me-2 text-success"></i>Próximo do palco</li>
+                                            <li><i class="bi bi-check2 me-2 text-success"></i>Sinta a energia da multidão</li>
+                                            <li><i class="bi bi-check2 me-2 text-success"></i>Bares nas laterais da pista e acesso a área de alimentação</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="card card-custom border-warning text-center">
+                                    <div class="card-header bg-warning text-dark py-3">
+                                        <h4 class="my-0 fw-normal">VIP</h4>
+                                    </div>
+                                    <div class="card-body py-4">
+                                        <h1 class="card-title pricing-card-title">R$ 300,00</h1>
+                                        <ul class="list-unstyled mt-3 mb-4 text-muted">
+                                            <li><i class="bi bi-star-fill me-2 text-warning"></i>Colado no Palco</li>
+                                            <li><i class="bi bi-check2 me-2 text-success"></i>Open bar e Open Food</li>
+                                            <li><i class="bi bi-check2 me-2 text-success"></i>Entrada exclusiva sem filas</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselSetores" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselSetores" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Próximo</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="accordion" id="accordionAviso">
+                    <div class="accordion-item shadow-sm">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button fw-bold text-danger bg-danger-subtle" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <i class="bi bi-exclamation-triangle-fill me-2"></i> AVISO IMPORTANTE: Termos e Condições da Compra
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionAviso">
+                            <div class="accordion-body text-muted">
+                                <ul>
+                                    <li><strong>Classificação Indicativa:</strong> 16 anos. Menores de 16 anos apenas acompanhados pelos pais ou responsáveis legais.</li>
+                                    <li><strong>Retirada do Brinde:</strong> As camisetas brinde deverão ser retiradas exclusivamente no dia do evento.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div> </div> </div> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

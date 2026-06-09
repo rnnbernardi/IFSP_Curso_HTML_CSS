@@ -1,0 +1,19 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.carousel-item {
+    padding: 40px;
+}
+
+.card-custom {
+    max-width: 350px;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.w-100-color {
+    width: 100% !important;
+    height: 40px;
+    padding: 6px;
+}
